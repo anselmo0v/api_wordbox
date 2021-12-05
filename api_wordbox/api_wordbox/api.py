@@ -1,12 +1,11 @@
 import json
 
-from initialize import app, db
-from db_schema import User
+from .initialize import app, db
+from .db_schema import User
 
 from flask import request, make_response
 from flask_bcrypt import Bcrypt
 from flask_login import current_user
-
 
 bcrypt = Bcrypt(app)
 

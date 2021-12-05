@@ -1,11 +1,11 @@
-from initialize import db, uuid
+from .initialize import db, flask_uuid
 from flask_login import UserMixin
 from sqlalchemy.dialects.postgresql import UUID
 
 
 class User(UserMixin, db.Model):
     __tablename__='User'
-    id=db.Column(UUID(as_uuid=True), primary_key=True, default=uuid)
+    id=db.Column(UUID(as_uuid=True), primary_key=True, default=flask_uuid)
     password_hash = db.Column(db.String(128))
     name=db.Column(db.String(100))
     last_name=db.Column(db.String(100))
