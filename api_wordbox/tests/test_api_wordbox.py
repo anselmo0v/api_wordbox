@@ -16,7 +16,7 @@ def test_signup():
         'phone1':'123456',
         'phone2':'654321'
     }
-    response = requests.post('localhost:5000/sign_up', data=data)
+    response = requests.post('http://127.0.0.1:5000/sign_up', data=data)
     assert json.loads(response.content)['Success'] == 'User has been signed up'
 
 def test_login():
@@ -25,5 +25,5 @@ def test_login():
         'username':'prueba',
         'password':'pass_prueba'
     }
-    response = requests.post('localhost:5000/login', data=data)
+    response = requests.post('http://127.0.0.1:5000/login', data=data)
     assert response.content == 'User correctly logged in'
